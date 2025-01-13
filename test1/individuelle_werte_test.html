@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Individuelle Werte Test</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- WICHTIG für Responsivität -->
+</head>
+<body>
+    <div class="container">
+        <div id="logo" class="logo">
+            <img src="../images/logo.png" alt="Wissenschaftswelle Logo" max-width: 100%; height: auto;>
+        </div>
+        <h1 id="title">Individuelle Werte Test</h1>
+        <p id="hint" class="intro">Beantworte die folgenden Fragen, um deine individuellen Werte zu entdecken.</p>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div id="test">
+            <!-- Fragen werden hier eingefügt -->
+        </div>
+
+        <div class="navigation" id="navigation">
+            <!-- Entfernt den Zurück-Button -->
+            <button id="nextBtn" class="next-btn">Weiter</button>
+        </div>
+
+        <div class="result" id="result" style="display: none;">
+            <h2 id="resultHeadline">Ergebnisse</h2>
+            <canvas id="resultsChart"></canvas>
+            <p id="gesamtScore"></p>
+            <div class="buttons">
+                <button class="autonomie-btn" onclick="showModal('autonomie')"><i class="fas fa-user-secret"></i> Autonomie</button>
+                <button class="wissen-btn" onclick="showModal('wissen')"><i class="fas fa-book"></i> Wissen</button>
+                <button class="sinn-btn" onclick="showModal('sinn')"><i class="fas fa-search"></i> Sinn/Purpose</button>
+                <button class="exit-btn" onclick="returnToStart()">Ausgang</button>
+            </div>
+            <div class="final-text">
+                <!-- Entfernt den nachfolgenden Hinweis oder behalten Sie ihn bei Bedarf -->
+                <!-- <p>Vielen Dank für deine Teilnahme! Du kannst nun zum Start zurückkehren oder weitere Tests durchführen.</p> -->
+            </div>
+        </div>
+
+        <!-- Modale Fenster für Ergebnisse -->
+        <div id="autonomieModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('autonomieModal')">&times;</span>
+                <h3>Autonomie Ergebnis</h3>
+                <p id="autonomieInterpretation"></p>
+            </div>
+        </div>
+
+        <div id="wissenModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('wissenModal')">&times;</span>
+                <h3>Wissen Ergebnis</h3>
+                <p id="wissenInterpretation"></p>
+            </div>
+        </div>
+
+        <div id="sinnModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('sinnModal')">&times;</span>
+                <h3>Sinn/Purpose Ergebnis</h3>
+                <p id="sinnInterpretation"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
